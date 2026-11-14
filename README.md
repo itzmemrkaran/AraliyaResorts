@@ -1,6 +1,6 @@
-# Araliya Resorts: Blood Red Booking Site
+# Tower Plaza: Blood Red and White Resort Booking Site
 
-A static, all-red resort booking website for Sri Lanka (concept design).
+A static, blood red and white resort booking website for Sri Lanka (concept design).
 Plain HTML, CSS and JavaScript. No build step and no dependencies.
 
 ## Files
@@ -18,4 +18,4 @@ Push to GitHub, then Settings > Pages > Deploy from branch > `main` > `/ (root)`
 - Payment is simulated (test card 4242 4242 4242 4242). No money moves.
 - Bookings are stored in the visitor's browser (localStorage).
 - For real payments add a backend and a provider such as PayHere or Stripe.
-- Unofficial concept inspired by araliyaresorts.com. Sample rates only.
+- Sample rates, sample reviews and placeholder contact details. Replace before going live.

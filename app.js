@@ -1,23 +1,23 @@
 const $=s=>document.querySelector(s),esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
 const fmt=(v,c)=>c=="USD"?"$"+Math.round(v).toLocaleString():"LKR "+Math.round(v).toLocaleString();
 /* red-only scenes */
-const sc=(k,p)=>{const D=`<defs><linearGradient id="${p}g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#150204"/><stop offset=".6" stop-color="#8b0a14"/><stop offset="1" stop-color="#e0101f"/></linearGradient><filter id="${p}b"><feGaussianBlur stdDeviation="30"/></filter></defs><rect width="1600" height="900" fill="url(#${p}g)"/>`;
-const sun=(x,y,r)=>`<circle cx="${x}" cy="${y}" r="${r*1.8}" fill="#ff2a38" opacity=".3" filter="url(#${p}b)"/><circle cx="${x}" cy="${y}" r="${r}" fill="#ff4a57"/>`;
+const sc=(k,p)=>{const D=`<defs><linearGradient id="${p}g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff4f4"/><stop offset=".55" stop-color="#f4a0a6"/><stop offset="1" stop-color="#c8202c"/></linearGradient><filter id="${p}b"><feGaussianBlur stdDeviation="30"/></filter></defs><rect width="1600" height="900" fill="url(#${p}g)"/>`;
+const sun=(x,y,r)=>`<circle cx="${x}" cy="${y}" r="${r*1.8}" fill="#fff" opacity=".75" filter="url(#${p}b)"/><circle cx="${x}" cy="${y}" r="${r}" fill="#fff"/>`;
 const w=(y,c,o=1)=>`<path d="M0 ${y}Q200 ${y-40} 400 ${y}T800 ${y}T1200 ${y}T1600 ${y}V900H0Z" fill="${c}" opacity="${o}"/>`;
 const A=[
-sun(1100,460,140)+w(640,"#5a060d",.85)+w(720,"#3a0409")+w(810,"#150204")+`<path d="M330 900Q390 620 300 360" stroke="#0d0102" stroke-width="16" fill="none"/><g fill="#0d0102"><path d="M300 360Q200 290 110 380Q220 330 300 360"/><path d="M300 360Q230 250 130 250Q240 280 300 360"/><path d="M300 360Q330 250 440 240Q350 290 300 360"/><path d="M300 360Q400 300 490 390Q390 340 300 360"/></g>`,
-sun(800,380,110)+`<path d="M0 560L250 380 450 520 700 330 950 540 1200 400 1450 520 1600 450V900H0Z" fill="#5a060d" opacity=".9"/><path d="M0 660L300 500 560 640 900 480 1250 650 1600 540V900H0Z" fill="#3a0409"/><ellipse cx="500" cy="650" rx="560" ry="50" fill="#ff8a92" opacity=".2" filter="url(#${p}b)"/><ellipse cx="1150" cy="700" rx="500" ry="45" fill="#ff8a92" opacity=".2" filter="url(#${p}b)"/><path d="M0 780L400 640 800 760 1200 650 1600 770V900H0Z" fill="#150204"/>`,
-sun(800,380,200)+`<path d="M0 760H1600V900H0Z" fill="#0d0102"/><path d="M560 760A240 240 0 0 1 1040 760Z" fill="#1c0307"/><rect x="740" y="470" width="120" height="40" fill="#1c0307"/><path d="M770 470L800 290 830 470Z" fill="#1c0307"/><rect x="520" y="740" width="560" height="22" fill="#2a0408"/><rect x="545" y="718" width="510" height="22" fill="#2a0408"/><g fill="#0d0102"><rect x="190" y="560" width="14" height="210"/><circle cx="197" cy="540" r="70"/><rect x="1390" y="580" width="14" height="190"/><circle cx="1397" cy="560" r="64"/></g>`,
-sun(800,430,120)+`<path d="M0 620Q300 540 600 600T1200 590 1600 620V640H0Z" fill="#150204"/><rect y="630" width="1600" height="270" fill="#3a0409"/>`+[0,1,2,3,4,5,6].map(i=>`<rect x="${800-(180-i*22)}" y="${650+i*28}" width="${(180-i*22)*2}" height="8" rx="4" fill="#ff4a57" opacity="${.7-i*.08}"/>`).join("")+`<g stroke="#0d0102" stroke-width="5" fill="none"><path d="M300 260q20-25 40 0 20-25 40 0"/><path d="M420 200q16-20 32 0 16-20 32 0"/><path d="M1180 280q20-25 40 0 20-25 40 0"/></g>`,
-sun(1200,430,120)+`<rect y="720" width="1600" height="180" fill="#3a0409"/>`+w(740,"#150204",.9)+`<path d="M700 720L730 340 870 340 900 720Z" fill="#1c0307"/><rect x="715" y="300" width="170" height="40" fill="#2a0408"/><path d="M735 300L800 210 865 300Z" fill="#150204"/><circle cx="800" cy="320" r="70" fill="#ffd0d4" opacity=".4" filter="url(#${p}b)"/><rect y="650" width="1600" height="80" fill="#2a0408"/><path d="M0 650h1600" stroke="#0d0102" stroke-width="8" stroke-dasharray="30 30"/>`];
+sun(1100,460,140)+w(640,"#c8444d",.85)+w(720,"#b52430")+w(810,"#850a17")+`<path d="M330 900Q390 620 300 360" stroke="#6e000e" stroke-width="16" fill="none"/><g fill="#6e000e"><path d="M300 360Q200 290 110 380Q220 330 300 360"/><path d="M300 360Q230 250 130 250Q240 280 300 360"/><path d="M300 360Q330 250 440 240Q350 290 300 360"/><path d="M300 360Q400 300 490 390Q390 340 300 360"/></g>`,
+sun(800,380,110)+`<path d="M0 560L250 380 450 520 700 330 950 540 1200 400 1450 520 1600 450V900H0Z" fill="#c8444d" opacity=".9"/><path d="M0 660L300 500 560 640 900 480 1250 650 1600 540V900H0Z" fill="#b52430"/><ellipse cx="500" cy="650" rx="560" ry="50" fill="#fff" opacity=".55" filter="url(#${p}b)"/><ellipse cx="1150" cy="700" rx="500" ry="45" fill="#fff" opacity=".55" filter="url(#${p}b)"/><path d="M0 780L400 640 800 760 1200 650 1600 770V900H0Z" fill="#850a17"/>`,
+sun(800,380,200)+`<path d="M0 760H1600V900H0Z" fill="#6e000e"/><path d="M560 760A240 240 0 0 1 1040 760Z" fill="#8f0f1c"/><rect x="740" y="470" width="120" height="40" fill="#8f0f1c"/><path d="M770 470L800 290 830 470Z" fill="#8f0f1c"/><rect x="520" y="740" width="560" height="22" fill="#a3141f"/><rect x="545" y="718" width="510" height="22" fill="#a3141f"/><g fill="#6e000e"><rect x="190" y="560" width="14" height="210"/><circle cx="197" cy="540" r="70"/><rect x="1390" y="580" width="14" height="190"/><circle cx="1397" cy="560" r="64"/></g>`,
+sun(800,430,120)+`<path d="M0 620Q300 540 600 600T1200 590 1600 620V640H0Z" fill="#850a17"/><rect y="630" width="1600" height="270" fill="#b52430"/>`+[0,1,2,3,4,5,6].map(i=>`<rect x="${800-(180-i*22)}" y="${650+i*28}" width="${(180-i*22)*2}" height="8" rx="4" fill="#fff" opacity="${.7-i*.08}"/>`).join("")+`<g stroke="#6e000e" stroke-width="5" fill="none"><path d="M300 260q20-25 40 0 20-25 40 0"/><path d="M420 200q16-20 32 0 16-20 32 0"/><path d="M1180 280q20-25 40 0 20-25 40 0"/></g>`,
+sun(1200,430,120)+`<rect y="720" width="1600" height="180" fill="#b52430"/>`+w(740,"#850a17",.9)+`<path d="M700 720L730 340 870 340 900 720Z" fill="#8f0f1c"/><rect x="715" y="300" width="170" height="40" fill="#a3141f"/><path d="M735 300L800 210 865 300Z" fill="#850a17"/><circle cx="800" cy="320" r="70" fill="#ffd0d4" opacity=".4" filter="url(#${p}b)"/><rect y="650" width="1600" height="80" fill="#a3141f"/><path d="M0 650h1600" stroke="#6e000e" stroke-width="8" stroke-dasharray="30 30"/>`];
 return `<svg viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">${D}${A[k]}</svg>`};
 /* data */
 const H=[
-{n:"Araliya Beach Resort",l:"Unawatuna",t:"Waves",d:"2 hrs from Colombo",s:0,p:[38000,125]},
-{n:"Araliya Green City",l:"Nuwara Eliya",t:"Mist",d:"4.5 hrs from Colombo",s:1,p:[32000,105]},
-{n:"Araliya Green Hills",l:"Nuwara Eliya",t:"Mist",d:"4.5 hrs from Colombo",s:1,p:[30000,98]},
-{n:"Araliya Red",l:"Nuwara Eliya",t:"Mist",d:"4.5 hrs from Colombo",s:4,p:[28000,92]},
-{n:"Hotel Sudu Araliya",l:"Polonnaruwa",t:"Culture",d:"4.25 hrs from Colombo",s:2,p:[24000,80]}];
+{n:"Tower Plaza Beach Resort",l:"Unawatuna",t:"Waves",d:"2 hrs from Colombo",s:0,p:[38000,125]},
+{n:"Tower Plaza Green City",l:"Nuwara Eliya",t:"Mist",d:"4.5 hrs from Colombo",s:1,p:[32000,105]},
+{n:"Tower Plaza Green Hills",l:"Nuwara Eliya",t:"Mist",d:"4.5 hrs from Colombo",s:1,p:[30000,98]},
+{n:"Tower Plaza Red",l:"Nuwara Eliya",t:"Mist",d:"4.5 hrs from Colombo",s:4,p:[28000,92]},
+{n:"Tower Plaza Heritage",l:"Polonnaruwa",t:"Culture",d:"4.25 hrs from Colombo",s:2,p:[24000,80]}];
 const SL=[
 ["Unawatuna","Toes in the sand, <em>heart on fire</em>","Golden sunsets, turquoise surf and the warmest welcome on the south coast.",0],
 ["Nuwara Eliya","Mist, tea and <em>crimson</em> skies","Cool hill-country mornings and fireside evenings among the tea estates.",1],
@@ -26,7 +26,7 @@ const SL=[
 ["Galle Fort","History by the <em>sea</em>","Colonial ramparts, lighthouse walks and slow evenings on the ocean wall.",4]];
 const R=[["Deluxe Room",1],["Family Suite",1.4],["Spa Suite",1.7]];
 /* loader */
-$("#wd").innerHTML="ARALIYA".split("").map((c,i)=>`<span style="animation-delay:${1.2+i*.1}s">${c}</span>`).join("");
+$("#wd").innerHTML="TOWER PLAZA".split("").map((c,i)=>`<span style="animation-delay:${1.2+i*.09}s">${c==" "?"&nbsp;":c}</span>`).join("");
 let pc=0;const lv=setInterval(()=>{pc=Math.min(100,pc+Math.random()*4+1.2);$("#pf").style.width=pc+"%";$("#pp").textContent=Math.floor(pc)+"%";if(pc>=100){clearInterval(lv);setTimeout(()=>{$("#ld").classList.add("open");document.body.classList.remove("lock");go(0);setTimeout(()=>$("#ld").remove(),1500)},400)}},70);
 /* slider */
 const sl=$("#sl");let cur=-1,tm,touch=0;
@@ -47,8 +47,8 @@ const io=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target
 document.querySelectorAll(".rv").forEach(e=>io.observe(e));
 /* data layer: bookings are kept in this browser (localStorage) */
 let LOCAL=[];
-try{LOCAL=JSON.parse(localStorage.getItem("araliya_bookings")||"[]")}catch(e){}
-const persist=()=>{try{localStorage.setItem("araliya_bookings",JSON.stringify(LOCAL))}catch(e){}};
+try{LOCAL=JSON.parse(localStorage.getItem("towerplaza_bookings")||"[]")}catch(e){}
+const persist=()=>{try{localStorage.setItem("towerplaza_bookings",JSON.stringify(LOCAL))}catch(e){}};
 /* booking flow */
 let S={};
 const openM=()=>$("#m").classList.add("open"),closeM=()=>$("#m").classList.remove("open");
@@ -63,7 +63,7 @@ function step1(){steps(1);$("#mb").innerHTML=`<h2 style="font-size:30px;margin-t
 document.querySelectorAll(".room").forEach(r=>r.onclick=()=>{S.r=+r.dataset.r;step1()});$("#n1").onclick=step2}
 const luhn=n=>{if(n.length<13)return false;let s=0,a=0;for(let i=n.length-1;i>=0;i--){let d=+n[i];if(a){d*=2;if(d>9)d-=9}s+=d;a=!a}return s%10==0};
 function step2(){steps(2);$("#mb").innerHTML=`<h2 style="font-size:30px;margin-top:0">Secure payment</h2><div class="cols"><div>
-<div class="cc" id="cc"><div><div class="face"><div style="display:flex;justify-content:space-between"><b>Araliya Pay</b><span id="bd">CARD</span></div><div class="num" id="pn">•••• •••• •••• ••••</div><div style="display:flex;justify-content:space-between;font-size:13px"><span id="pm">FULL NAME</span><span id="pe">MM/YY</span></div></div><div class="face back"><div class="stripe"></div><div style="text-align:right;font-family:monospace">CVV <span id="pc">•••</span></div><small>Demo gateway: no real charge</small></div></div></div>
+<div class="cc" id="cc"><div><div class="face"><div style="display:flex;justify-content:space-between"><b>Tower Pay</b><span id="bd">CARD</span></div><div class="num" id="pn">•••• •••• •••• ••••</div><div style="display:flex;justify-content:space-between;font-size:13px"><span id="pm">FULL NAME</span><span id="pe">MM/YY</span></div></div><div class="face back"><div class="stripe"></div><div style="text-align:right;font-family:monospace">CVV <span id="pc">•••</span></div><small>Demo gateway: no real charge</small></div></div></div>
 <div class="row2"><div><label>Full name</label><input id="gn" autocomplete="name"></div><div><label>Email</label><input id="ge" type="email"></div></div>
 <div class="fld"><label>Card number</label><input id="cn" inputmode="numeric" maxlength="19" placeholder="4242 4242 4242 4242"></div>
 <div class="row2"><div><label>Expiry</label><input id="ce" maxlength="5" placeholder="MM/YY"></div><div><label>CVV</label><input id="cv" inputmode="numeric" maxlength="4" placeholder="123"></div></div><div class="err" id="er"></div></div>
@@ -81,7 +81,7 @@ g("er").textContent=m;if(!m){S.name=g("gn").value.trim();S.email=g("ge").value.t
 function process(){steps(3);const ms=["Contacting your bank…","Verifying 3-D Secure…","Confirming your room…"];let k=0;
 $("#mb").innerHTML=`<div class="center"><div class="spin"></div><h3 id="pm2">${ms[0]}</h3><p class="sub" style="margin:auto">Please keep this window open.</p></div>`;
 const iv=setInterval(()=>{k++;if(k<3)$("#pm2").textContent=ms[k];else{clearInterval(iv);done()}},1100)}
-function done(){const ref="ARL-"+Math.random().toString(36).slice(2,8).toUpperCase(),c=calc();
+function done(){const ref="TWP-"+Math.random().toString(36).slice(2,8).toUpperCase(),c=calc();
 const rec={ref,hotel:H[S.h].n,room:R[S.r][0],from:S.i,to:S.o,guests:+S.g,total:fmt(c.tot,S.cur),name:S.name,at:Date.now()};
 LOCAL.push(rec);persist();const saved=" Saved on this device under My bookings.";
 $("#mb").innerHTML=`<div class="center"><div class="ok"><svg viewBox="0 0 40 40"><path d="M8 21l8 8 16-17"/></svg></div><h2 style="font-size:32px">Booking confirmed</h2><p class="sub" style="margin:0 auto 18px">Thank you, ${esc(S.name)}. Reference <b style="color:var(--red)">${ref}</b>.${saved}</p><div style="max-width:380px;margin:auto;text-align:left">${summary()}</div><button class="btn" id="dn" style="margin-top:20px">Done</button></div>`;$("#dn").onclick=closeM}
@@ -91,9 +91,9 @@ L=[...L].sort((a,b)=>b.at-a.at);$("#mb").innerHTML='<h2 style="font-size:30px;ma
 /* concierge */
 $("#cb").onclick=()=>$("#cp").classList.toggle("open");
 const reply=q=>{q=q.toLowerCase();
-if(/beach|sea|surf|unawatuna|galle/.test(q))return"Araliya Beach Resort in Unawatuna is about 2 hours from Colombo, minutes from Galle Fort and great for surfing.";
-if(/hill|cool|tea|nuwara|mist|cold/.test(q))return"In Nuwara Eliya choose Green City, Green Hills or Araliya Red. Pack warm layers, mornings are misty and cool.";
-if(/polonnaruwa|culture|ancient|elephant|safari|sudu/.test(q))return"Hotel Sudu Araliya in Polonnaruwa is close to Parakrama Samudraya and Minneriya National Park for elephants.";
+if(/beach|sea|surf|unawatuna|galle/.test(q))return"Tower Plaza Beach Resort in Unawatuna is about 2 hours from Colombo, minutes from Galle Fort and great for surfing.";
+if(/hill|cool|tea|nuwara|mist|cold/.test(q))return"In Nuwara Eliya choose Green City, Green Hills or Tower Plaza Red. Pack warm layers, mornings are misty and cool.";
+if(/polonnaruwa|culture|ancient|elephant|safari|sudu/.test(q))return"Tower Plaza Heritage in Polonnaruwa is close to Parakrama Samudraya and Minneriya National Park for elephants.";
 if(/price|cost|rate|cheap|offer|discount/.test(q))return"Rates start from about LKR 24,000 a night. Book direct for offers of up to 45% off.";
 if(/when|season|weather|month/.test(q))return"December to March suits the south-west and hills. April to September suits the north and east.";
 if(/kid|child|family/.test(q))return"Yes, we have family suites with separate rooms. Choose Family Suite when booking.";
